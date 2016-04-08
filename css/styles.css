@@ -1,0 +1,275 @@
+@import url(https://fonts.googleapis.com/css?family=Vollkorn:400,400italic,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700,900);
+@font-face { font-family: NexaBold; src: url('nexabold.oft'); } 
+@font-face { font-family: NexaLight; src: url('nexalight.oft'); } 
+
+
+html, body {
+	margin:0; 
+	height:100%; 
+	width:100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+	margin: 0;
+	padding: 120px 0 8px 0;
+	width: 400px;
+	font-family: "NexaBold", sans-serif;
+	text-transform: uppercase;
+	font-size: 80px;
+	letter-spacing: 8px;
+	color: #00FBE2;
+	opacity: 0.7;
+}
+
+h2 {
+	margin: 0;
+	font-family: "NexaBold", sans-serif;
+	text-transform: uppercase;
+	font-size: 20px;
+	letter-spacing: 2.4px;
+	color: white;
+	top: 0;
+}
+
+h3 {
+	margin: 0;
+	font-family: "Source Sans Pro", sans-serif;
+	font-weight: 400;
+	font-size: 22px;
+	line-height: 32px;
+	width: 350px;
+	color: white;
+}
+
+h4 {
+	margin: 0;
+	padding-bottom: 20px;
+	font-family: "NexaBold", sans-serif;
+	text-transform: uppercase;
+	font-size: 18px;
+	letter-spacing: 2.25px;
+	color: #00FBE2;
+}
+
+p {
+	margin: 0;
+	font-family: "Source Sans Pro";
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 26px;
+	width: 400px;
+	color: white;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+
+/* HOME */
+
+#fullscreen-bg {
+	overflow: hidden;
+	height:100%; 
+	width:100%;
+}
+
+#title {
+	position: absolute;
+	top: 20%;
+	left: 25%;
+	z-index: 100;
+}
+
+.nextbutton {
+	position: absolute;
+	font-family: "Source Sans Pro";
+	font-weight: 300;
+	text-transform: uppercase;
+	font-size: 22px;
+	letter-spacing: 3px;
+	top: 75%;
+	left: 45%;
+	text-align: center;
+	padding: 5px 25px 5px 25px;
+	border: 3px solid white;
+}
+
+/* NAVIGATION */
+
+.navbar {
+	position: fixed;
+	float: right;
+	background-color: #131316;
+	width: 95px;
+	z-index: 100;
+	top: 0;
+	right: 0;
+	text-align: center;
+}
+
+.menu-icon {
+	position: absolute;
+	margin-left: -19px;
+	margin-top: 55px;
+	left: 50%;
+}
+
+.close-icon {
+	display: none;
+	position: absolute;
+	margin-left: -19px;
+	margin-top: 55px;
+	left: 50%;
+}
+
+.iconset {
+	position: relative;
+	margin: 0 auto;
+	padding: 10px;
+	width: 40px;
+	height: auto;
+	vertical-align: middle;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.icon {
+	margin: 0 auto;
+	padding: 10px 0 10px 0;
+	text-align: center; 
+	position: relative;
+
+}
+
+.selected {
+	position: absolute;
+	padding: 10px 0 10px 0;
+}
+
+/* MENU */
+
+#menuwrapper {
+	overflow: hidden;
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	z-index: 10;
+}
+
+.strip {
+	position: relative;
+	float: left;
+	height: 100%;
+	width: 20%;
+	background-size: cover;
+	font-family: "NexaBold";
+	text-transform: uppercase;
+	overflow: hidden;
+	border: none;
+}
+
+.section-name {
+	position: absolute;
+	margin: 0 auto;
+	text-align: center;
+	top: 15%;
+	left: 0;
+	right: 0;
+	text-transform: uppercase;
+	font-size: 15px;
+	letter-spacing: 1.8px;
+	color: #00F0E7;
+}
+
+.strip-name {
+	position: absolute;
+	font-size: 22px;
+	text-align: center;
+	letter-spacing: 2.8px;
+	line-height: 28px;
+    left: 50%;
+    top: 50%;
+    color: white;
+    transform: translate(-50%,-50%);
+
+}
+
+.filter {
+	position: relative;
+	height: 100%;
+	background-color: black;
+	opacity: 0.5;
+	transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+}
+
+.strip:hover .filter {
+	opacity: 0;
+}
+
+
+#intro-strip {
+	background-image: url("../menu/menuintro.png");
+}
+
+#lands-strip {
+	background-image: url("../menu/menulands.png");
+}
+
+#government-strip {
+	background-image: url("../menu/menugovernment.png");
+}
+
+#people-strip {
+	background-image: url("../menu/menupeople.png");
+}
+
+#future-strip {
+	background-image: url("../menu/menufuture.png");
+}
+
+
+/* SECTIONS */
+
+.overview {
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+
+}
+
+.content {
+	width: auto;
+	height: auto;
+	margin-left: 15%;
+}
+
+
+/* Introduction */
+
+#intro {
+	background-image: url("../introduction/introimage.png");
+}
+
+#warming-planet {
+	background-color: #695344;
+}
+
+#two-degrees {
+	background-color: #3C6C8B;
+}
+
+#why {
+	background-color: #535862;
+}
+
+
+
