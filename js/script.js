@@ -12,23 +12,27 @@ $('.section').css( {
  var currentIndex = 1;
 
 $(document).ready(function() {
+    
+    //Fade In and Out
+
+    $('body').fadeIn(500).removeClass('hidden');
+
+    fadeOutLink('#intro-strip', '../introduction/introduction.html');
+    fadeOutLink('#lands-strip', '../lands/lands.html');
+    fadeOutLink('#government-strip', '../government/government.html');
+    fadeOutLink('#people-strip', '../people/people.html');
+    fadeOutLink('#future-strip', '../future/future.html');
+
     if ($('meta#dots-diamonds').length > 0) {
         $('#fullpage').fullpage( {
         	onLeave: function(index, nextIndex, direction) {
         	},
         	afterLoad: function(anchorLink, index) {
-            	$('.iconset').html(dotTemplate);
-                var x = $('.side-dot')[index-1];
-                $(x).prepend($('.selected'));
-
                 currentIndex = index;
+            	setSideBar('dot', false);
         	},
-
         });
     }
-
-
-
 
     $(".menu-icon").on("click", function(e) {
         var pageWidth = $('#fullpage').width();
@@ -38,14 +42,22 @@ $(document).ready(function() {
         $('#menuwrapper').css({
             width: pageWidth - 95,
             top: indexOffset.top,
-            opacity: 0,
         });
 
-        $("#menuwrapper").animate({
-            opacity: 1,
-        }, 500, function() {
-            $('#menuwrapper').show();
+        var delay = 100;
+        $('.strip').css({ opacity: 0 });
+        $($(".strip").get().reverse()).each(function() {
+            $(this).animate({
+                opacity: 1
+            }, delay);
+            delay += 200;
         });
+
+        // $("#menuwrapper").animate({
+        //     opacity: 1,
+        // }, 500, function() {
+        //     $('#menuwrapper').show();
+        // });
 
         // Toggle Wave button
         $('.menu-icon').animate({
@@ -62,19 +74,26 @@ $(document).ready(function() {
             }, 250);
         });
 
-        setSideBar('diamond');
+        setSideBar('diamond', true);
     });
 
     $(".close-icon").on("click", function(e) {
-        $("#menuwrapper").animate({
-            opacity: 0,
-        }, 500, function() {
-            $("#menuwrapper").remove();
+        var delay = 100;
+        var stripCount = $('.strip').length;
+        $('.strip').each(function(index) {
+            $(this).animate({
+                opacity: 0
+            }, delay, function() {
+                if (index === stripCount - 1) {
+                $('#menuwrapper').remove();
+            }
+            });
+            delay += 200;
+
+
         });
 
-
         // Toggle Cancel button
-        
         $('.close-icon').animate({
             opacity: 0
         }, 250, function() {
@@ -89,13 +108,19 @@ $(document).ready(function() {
             }, 250);
         });
 
-        setSideBar('dot');
+        setSideBar('dot', true);
     });
-
 });
 
-function setSideBar(choice) {
+function fadeOutLink(elementLink, destination) {
+    $('body').on('click', elementLink,function() {
+        $('body').fadeOut(500, function() {
+            window.location.href = destination;
+        });
+    });
+}
 
+function setSideBar(choice, animate) {
     if (choice == "diamond") {
         $('.iconset').animate({
             opacity: 0
@@ -103,13 +128,13 @@ function setSideBar(choice) {
             $(this).html(diamondTemplate);
             $(".diamond")
                 .mouseenter(function() {
-                    this.src = '../menu/section-icon-after.png'
+                    this.src = this.src.replace('before', 'after');
 
                     var index = parseInt(this.id);
                     $($('.strip')[index]).find('.filter').hide();            
                 })
                 .mouseleave(function() {
-                    this.src = '../menu/section-icon-before.png'
+                    this.src = this.src.replace('after', 'before');
                     
                     var index = parseInt(this.id);
                     $($('.strip')[index]).find('.filter').show();
@@ -121,14 +146,27 @@ function setSideBar(choice) {
         $.fn.fullpage.setMouseWheelScrolling(false);
         $.fn.fullpage.setAllowScrolling(false);
     } else if (choice == 'dot') {
-        
-        $('.iconset').animate({
-            opacity: 0
-        }, 250, function() {
-            $(this).html(dotTemplate);
-        }).animate({
-            opacity: 1    
-        }, 250);
+        var fullTemplate = `
+            <div class='side-dot'>
+                <img class='selected' src='../menu/subsection-icon-selected.png'>
+                <img class='sub-icon' src='../menu/subsection-icon.png'></div>`;
+        for (var i = 0; i < $('.section').length - 1; i++) {
+            fullTemplate += "<div class='side-dot'><img class='sub-icon' src='../menu/subsection-icon.png'></div>";
+        }
+
+        if (animate) {
+            $('.iconset').animate({
+                opacity: 0
+            }, 250, function() {
+                $(this).html(fullTemplate);
+            }).animate({
+                opacity: 1    
+            }, 250);
+        }
+
+        else {
+            $('.iconset').html(fullTemplate);
+        }
 
         var x = $('.side-dot')[currentIndex-1];
         $(x).prepend($('.selected'));
@@ -152,7 +190,7 @@ $( window ).resize(function() {
 
 var overlay = `
     <div id="menuwrapper">
-        <a href="../introduction/introduction.html"><div id="intro-strip" class="strip"> 
+        <a><div id="intro-strip" class="strip"> 
             <div class="section-name">
                 Introduction
             </div>
@@ -162,7 +200,7 @@ var overlay = `
             <div class="filter">
             </div>
         </div></a>
-        <div id="lands-strip" class="strip">
+        <a><div id="lands-strip" class="strip">
             <div class="section-name">
                 Lands
             </div>
@@ -171,8 +209,8 @@ var overlay = `
             </div>
             <div class="filter">
             </div>
-        </div>
-        <div id="government-strip" class="strip">
+        </div></a>
+        <a><div id="government-strip" class="strip">
             <div class="section-name">
                 Government
             </div>
@@ -181,8 +219,8 @@ var overlay = `
             </div>
             <div class="filter">
             </div>
-        </div>
-        <div id="people-strip" class="strip">
+        </div></a>
+        <a><div id="people-strip" class="strip">
             <div class="section-name">
                 People
             </div>
@@ -191,8 +229,8 @@ var overlay = `
             </div>
             <div class="filter">
             </div>
-        </div>
-        <div id="future-strip" class="strip">
+        </div></a>
+        <a><div id="future-strip" class="strip">
             <div class="section-name">
                 Future
             </div>
@@ -201,25 +239,16 @@ var overlay = `
             </div>
             <div class="filter">
             </div>
-        </div>
+        </div></a>
     </div>
 `;
 
 var diamondTemplate = `
-    <a href="../introduction/introduction.html"><img class="icon diamond" id="0" src='../menu/section-icon-before.png'></a>
-    <img class="icon diamond" id="1" src='../menu/section-icon-before.png'>
-    <img class="icon diamond" id="2" src='../menu/section-icon-before.png'>
-    <img class="icon diamond" id="3" src='../menu/section-icon-before.png'>
-    <img class="icon diamond" id="4" src='../menu/section-icon-before.png'>
-`;
-
-var dotTemplate = `
-            <div class="side-dot">
-                <img class="selected" src="subsection-icon-selected.png">
-                <img class="icon" src='subsection-icon.png'></div>
-            <div class="side-dot"><img class="icon" src='subsection-icon.png'></div>
-            <div class="side-dot"><img class="icon" src='subsection-icon.png'></div>
-            <div class="side-dot"><img class="icon" src='subsection-icon.png'></div>
+    <a href="../introduction/introduction.html"><img class="icon diamond" id="0" src='../menu/intro-icon-before.png'></a>
+    <a href="../lands/lands.html"><img class="icon diamond" id="1" src='../menu/lands-icon-before.png'></a>
+    <a href="../government/government.html"><img class="icon diamond" id="2" src='../menu/government-icon-before.png'></a>
+    <a href="../people/people.html"><img class="icon diamond" id="3" src='../menu/people-icon-before.png'></a>
+    <a href="../future/future.html"><img class="icon diamond" id="4" src='../menu/future-icon-before.png'></a>
 `;
 
 
