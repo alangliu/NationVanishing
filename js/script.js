@@ -12,8 +12,16 @@ $('.section').css( {
  var currentIndex = 1;
  var isPlay = false;
 
-
 $(document).ready(function() {
+    var origThermTop =  parseInt($('#yellow-bar').css('top'), 10);
+    $('#temp-numbers p').click(function() {
+        var yPos =  getOffset(this).top
+        $('#yellow-bar').css({
+            top: yPos,
+            height: origThermTop - yPos
+        });
+    });
+
     $('#above-graphic').click(function() {
         setIcebergCard();
         $(this).css("background-image", "url(../introduction/above-selected.png)");
@@ -250,6 +258,17 @@ function setIcebergCard() {
     if ($('.why-default').length > 0) {
         $('.why-default').replaceWith(icebergTermplate);
     }
+}
+
+function getOffset( el ) {
+    var _x = 0;
+    var _y = 0;
+    while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) ) {
+        _x += el.offsetLeft - el.scrollLeft;
+        _y += el.offsetTop - el.scrollTop;
+        el = el.offsetParent;
+    }
+    return { top: _y, left: _x };
 }
 
 var overlay = `

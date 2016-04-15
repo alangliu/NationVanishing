@@ -599,9 +599,9 @@ video {
 	position: relative;
 	background-color: #EBB238;
 	width: 8.5px;
-	height: 20px;
+	height: 0px;
 	left: 166px;
-	top: 325px;
+	top: 345px;
 }
 
 #temp-numbers {
