@@ -1,33 +1,82 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Government</title>
+	<title>People</title>
 	<link rel="stylesheet" type="text/css" href="../css/jquery.fullPage.css">
 	<link rel="stylesheet" type="text/css" href="../css/styles.css">
+	<link rel="stylesheet" href="../css/animate.css">
 	<meta id="dots-diamonds"></meta>
 </head>
 <body class="hidden">
 	<div class="bar navbar">
-		<img class="menu-icon" src="../menu/menu-icon.png">
-		<img class="close-icon" src="../menu/close-icon.png">
-		<div class="iconset">
+		<div class="menu-icon"></div>
+		<div class="close-icon"></div>
+		<div class="iconset"></div>
 		</div>
 	</div>
 	<div id="fullpage">
-		<div id="people" class="section overview"> 
-			<div class="content">
+		<div id="people" class="section"> 
+			<div class="overview">
 				<h2>People</h2>
 				<h1>Vanishing Stories</h1>
 				<h3>What happens when homelands become completely uninhabitable? The governing bodies of island nations must now take a stand to ensure their country&#39;s survival.</h3>
 			</div>
 		</div>
-		<div id="daughter" class="section story"> 
-			<div class="content">
-				
+		<div id="daughter" class="section"> 
+			<div class="story-overlay">
+				<div class="story">
+					<h5 class="location">UN Climate Summit</h5>
+					<h5 class="name">Kathy Jetnil-Kijiner</h5>
+					<h6>A Poem to my Daughter</h6>
+					<p>Marshallese poet Kathy Jetnil-Kijiner spoke on behalf of civil society during the opening ceremony of the UN Climate Summit in New York City.<br><br>She performed her poem entitled "Dear Matafele Peinem" written to her daughter.</p>
+					<div class="play" id="play1">
+						<audio id="audio1">
+							<source src="../people/daughter-audio.mp3">
+						</audio>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="saltywater" class="section"> 
+			<div class="story-overlay">
+				<div class="story">
+					<h5 class="location">North Tarawa, Kiribati</h5>
+					<h5 class="name">Lisa Rawekai</h5>
+					<h6>Salty Water</h6>
+					<p>Marshallese poet Kathy Jetnil-Kijiner spoke on behalf of civil society during the opening ceremony of the UN Climate Summit in New York City.She performed her poem entitled "Dear Matafele Peinem" written to her daughter.</p>
+					<div class="play" id="play2">
+						<audio id="audio2">
+							<source src="../people/identity-audio.mp3">
+						</audio>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="identity" class="section"> 
+			<div class="story-overlay">
+				<div class="story">
+					<h5 class="location">Auckland, New Zealand</h5>
+					<h5 class="name">Reverend Suamalie</h5>
+					<h6>Our Identity</h6>
+					<p>Rev. Suamalie NT Iosefa is the leader of a Tuvaluan church in New Zealand.  The migrant Tuvaluan community  has purchased 10 acres of land on the outskirts of Auckland to be turned into a retirement village and nursery.<br><br>Suamalie hopes to preserve the Tuvaluan language, culture, and identity for future generations, whether or not Tuvalu continues to exist.</p>
+					<div class="play">
+						<audio id="audio2">
+							<source src="../people/identity-audio.mp3">
+						</audio>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="people-end" class="section">
+			<div class="end">
+				<h4><span>you finished </span> Vanishing Stories</h4>
+				<img class="end-icon" src="../menu/future-icon-half.png">
+				<h6>now explore</h6>
+				<h1>The Need for Change</h1>
+				<div id="people-nextbutton" class="nextbutton"><a>Next Part</a></div>
 			</div>
 		</div>
 	</div>
-
 </body>
 	<script type="text/javascript" src="../js/jquery-2.2.2.min.js"></script>
 	<script type="text/javascript" src="../js/jquery.fullPage.js"></script>

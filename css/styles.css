@@ -1,8 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Vollkorn:400,400italic,700,700italic);
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700,900);
+@import url(https://fonts.googleapis.com/css?family=Coustard);
 @font-face { font-family: NexaBold; src: url('nexabold.oft'); } 
 @font-face { font-family: NexaLight; src: url('nexalight.oft'); } 
-
 
 html, body {
 	margin:0; 
@@ -20,13 +20,19 @@ html, body {
 h1 {
 	margin: 0;
 	padding: 120px 0 8px 0;
-	width: 600px;
+	width: 650px;
 	font-family: "NexaBold", sans-serif;
 	text-transform: uppercase;
 	font-size: 80px;
 	letter-spacing: 8px;
 	color: #00FBE2;
 	opacity: 0.7;
+}
+
+.end h1 {
+	margin: 0 auto;
+	padding: 0;
+	font-size: 42px;
 }
 
 h2 {
@@ -37,6 +43,7 @@ h2 {
 	letter-spacing: 2.4px;
 	color: white;
 	top: 0;
+	padding-top: 75px;
 }
 
 h3 {
@@ -59,14 +66,110 @@ h4 {
 	color: #00FBE2;
 }
 
+.card h4 {
+	margin: 0 auto;
+	text-align: center;
+	color: white;
+}
+
+.card-container h4{
+	margin: 0 auto;
+	text-align: center;
+	color: black;
+	padding-bottom: 15px;
+}
+
+.quote h4 {
+	margin: 0 auto;
+	letter-spacing: 3.33px;
+	color: white;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.end h4 {
+	color: rgba(255, 255, 255, 0.5);
+	padding-bottom: 60px;
+	font-size: 15px;
+}
+
+h5 {
+	margin: 0;
+	padding-bottom: 4px;
+	font-family: "Source Sans Pro", sans-serif;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 18px;
+	letter-spacing: 3.5px;
+	color: white;
+}
+
+h6 {
+	margin: 0 auto;
+	padding-top: 20px;
+	padding-bottom: 46px;
+	font-family: "Vollkorn", serif;
+	font-weight: 400;
+	font-style: italic;
+	font-size: 48px;
+	color: white;
+	width: 850px;
+}
+
+.story h6 {
+	padding: 20px 0 0 0;
+	text-align: left;
+	width: auto;
+	line-height: 56px;
+}
+
+#future-quote h6 {
+	text-align: center;
+	width: 650px;
+}
+
+.end h6 {
+	font-size: 26px;
+	letter-spacing: 1.8px;
+	padding-top: 25px;
+	padding-bottom: 10px;
+	width: auto;
+}
+
 p {
 	margin: 0;
-	font-family: "Source Sans Pro";
+	font-family: "Source Sans Pro", sans-serif;
 	font-weight: 400;
 	font-size: 18px;
 	line-height: 26px;
 	width: 400px;
 	color: white;
+	-webkit-animation-duration: 5s;
+  	-moz-animation-duration: 5s;
+}
+
+.story p {
+	position: relative;
+	font-size: 16px;
+	line-height: 24px;
+	padding-top: 25px;
+	width: 90%;
+}
+
+.card p {
+	color: black;
+	text-align: left;
+	width: auto;
+	padding-top: 15px;
+}
+
+span {
+	font-family: "Vollkorn", serif;
+	text-transform: lowercase;
+	font-style: italic;
+	font-weight: 300;
+
+
 }
 
 a {
@@ -74,6 +177,20 @@ a {
 	color: white;
 }
 
+hr {
+	background-color: white;
+	height: 5px;
+	width: 70px;
+	-webkit-animation-delay: .3s;
+  	-moz-animation-delay: .3s;
+}
+
+.card hr {
+	background-color: black;
+	height: 5px;
+	margin: 0 auto;
+	width: 50px;
+}
 
 /* HOME */
 
@@ -109,20 +226,33 @@ video {
 
 .nextbutton {
 	position: absolute;
+	margin: 0 auto;
+	width: 275px;
+	background-color: #E76E66;
 	font-family: "Source Sans Pro";
-	font-weight: 300;
+	font-weight: 600;
 	text-transform: uppercase;
 	font-size: 22px;
-	letter-spacing: 3px;
-	top: 75%;
-	left: 45%;
+	letter-spacing: 1.8px;
 	text-align: center;
-	padding: 5px 25px 5px 25px;
-	border: 3px solid white;
+	padding: 10px 0 10px 0;
+	top: 75%;
+	left: 0;
+	right: 0;
+	transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+}
+
+.end .nextbutton {
+	position: relative;
+	top: 0;
+	margin-top: 110px;
 }
 
 .nextbutton:hover {
 	cursor: pointer;
+	opacity: 0.7;
 }
 
 /* NAVIGATION */
@@ -143,10 +273,28 @@ video {
 	margin-left: -19px;
 	margin-top: 50px;
 	left: 50%;
+	width: 38px;
+	height: 38px;
+	transition: background-image .25s ease-in-out;
+    -moz-transition: background-image .25s ease-in-out;
+    -webkit-transition: background-image .25s ease-in-out;
+}
+
+.menu-icon {
+	background-image: url("../menu/menu-icon.png");
+}
+
+.menu-icon:hover {
+	background-image: url("../menu/menu-icon-hover.png");
 }
 
 .close-icon {
+	background-image: url("../menu/close-icon.png");
 	display: none;
+}
+
+.close-icon:hover {
+	background-image: url("../menu/close-icon-hover.png");
 }
 
 .menu-icon:hover, .close-icon:hover {
@@ -179,11 +327,21 @@ video {
 	text-align: center; 
 	position: relative;
 	width: 40px;
-
 }
 
 .selected {
 	position: absolute;
+}
+
+.sub-icon {
+	opacity: .25;
+	transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+}
+
+.sub-icon:hover {
+	opacity: .75;
 }
 
 /* MENU */
@@ -296,28 +454,108 @@ video {
 
 /* SECTIONS */
 
-.overview, .explain, .quote {
+.section {
 	width: 100%;
 	height: 100%;
 	background-size: cover;
 }
 
-.content {
+.overview, .explain, .story {
 	width: auto;
 	height: auto;
 	margin-left: 15%;
 	margin-right: 15%;
 }
 
+.end, .card {
+	text-align: center;
+	padding-right: 95px;
+}
+
 .graphic  {
 	position: absolute;
 	float: right;
 	top: 50%;
+	width: 500px;
+	height: 500px;
+	margin-top: -250px;
 	left: 50%;
-	padding-left: 95px;
+}
+
+.why-content {
+	overflow: hidden;
+	padding: 0 15% 0 15%;
+}
+
+.card-container {
+	position: absolute;
+	margin: 0 auto;
+	margin-top: -125px;
+	top: 50%;
+	width: 450px;
+	height: 250px;
+	background-color: white;
+	box-shadow: 0px 0px 10px #3C3C3C;
+	float: left;
+}
+
+.card-content {
+	position: relative;
+	margin: 0 auto;
+	width: auto;
+	top: 50%;
+	transform: translateY(-50%);
+	padding: 0 60px 0 60px;
+}
+
+.quote {
+	margin: 0 auto;
+	padding-right: 95px;
+	text-align: center;
+} 
+
+.quotation-mark {
+	margin: 0 auto;
+	font-family: "Coustard";
+	font-size: 100px;
+}
+
+.story-overlay {
+	background-color: rgba(0, 0, 0, 0.5);
+	width: 50%;
+	height: 100%;
+}
+
+.story {
+	position: relative;
+	padding-left: 15%;
+	top: 50%;
 	transform: translateY(-50%);
 }
 
+.location {
+	font-weight: 300;
+}
+
+
+.play {
+	width: 118px;
+	height: 43px;
+	background-image: url("../people/soundbutton.png");
+	margin-top: 40px;
+	transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+}
+
+.pause {
+	background-image: url("../people/stopsoundbutton.png");
+}
+
+.play:hover, .pause:hover {
+	cursor: pointer;
+	opacity: 0.7;
+}
 
 /* Introduction */
 
@@ -333,8 +571,32 @@ video {
 	background-image: url("../introduction/why.png");
 }
 
+	#why-graphic {
+		position: relative;
+		float: right;
+		width: 500px;
+		height: 500px;
+	}
+
+	#above-graphic {
+		background-image: url("../introduction/above-selected.png");
+		width: 500px;
+		height: 250px;
+
+	}
+
+	#below-graphic {
+		background-image: url("../introduction/below-selected.png");
+		width: 500px;
+		height: 250px;
+	}
+
 #two-degrees {
 	background-color: #3C6C8B;
+}
+
+#intro-end {
+	background-image: url("../introduction/introend.png");
 }
 
 /* Lands */
@@ -363,25 +625,64 @@ video {
 	background-image: url("../lands/before.png");
 }
 
+#lands-end {
+	background-image: url("../lands/landsend.png");
+}
+
 /* Government */
 
 #government {
-	background-image: url("../government/governmentimage.png")
+	background-image: url("../government/governmentimage.png");
 }
+
+#climate-migration {
+	background-color: #246AA5;
+}
+
+#government-quote {
+	background-image: url("../government/governmentquote.png");
+}
+
+#cop21 {
+	background-image: url("../government/cop21.png");
+}
+
+#government-end {
+	background-image: url("../government/governmentend.png");
+}
+
 
 /* People */
 
 #people {
-	background-image: url("../people/peopleimage.png")
+	background-image: url("../people/peopleimage.png");
 }
 
 #daughter {
 	background-image: url("../people/story-daughter.png");
 }
 
+#saltywater {
+	background-image: url("../people/story-saltywater.png");
+}
 
+#identity {
+	background-image: url("../people/story-identity.png");
+}
 
+#people-end {
+	background-image: url("../people/peopleend.png");
+}
 
+/* Future */
+
+#future {
+	background-image: url("../future/futureimage.png")
+}
+
+#future-quote {
+	background-image: url("../future/futurequote.png")
+}
 
 
 

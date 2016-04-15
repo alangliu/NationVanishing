@@ -10,12 +10,36 @@ $('.section').css( {
  });
 
  var currentIndex = 1;
+ var isPlay = false;
+
 
 $(document).ready(function() {
-    
-    //Fade In and Out
+    $('#play1').click(function() {
+        if (isPlay) {
+            document.getElementById('audio1').pause();
+            $(this).removeClass('pause');
+            isPlay = false;
+        } else {
+            document.getElementById('audio1').play();
+            $(this).addClass('pause');
+            isPlay = true;
+        }
+    });
 
-    $('body').fadeIn(500).removeClass('hidden');
+    $('#play2').click(function() {
+        if (isPlay) {
+            document.getElementById('audio2').pause();
+            $(this).removeClass('pause');
+            isPlay = false;
+        } else {
+            document.getElementById('audio2').play();
+            $(this).addClass('pause');
+            isPlay = true;
+        }
+    });
+
+    //Fade In and Out
+    $('body').fadeIn(600).removeClass('hidden');
 
     fadeOutLink('#intro-strip', '../introduction/introduction.html');
     fadeOutLink('#lands-strip', '../lands/lands.html');
@@ -23,13 +47,30 @@ $(document).ready(function() {
     fadeOutLink('#people-strip', '../people/people.html');
     fadeOutLink('#future-strip', '../future/future.html');
 
+    fadeOutLink('#intro-nextbutton', '../lands/lands.html');
+    fadeOutLink('#lands-nextbutton', '../government/government.html');
+    fadeOutLink('#government-nextbutton', '../people/people.html');
+    fadeOutLink('#people-nextbutton', '../future/future.html');
+
     if ($('meta#dots-diamonds').length > 0) {
         $('#fullpage').fullpage( {
+            anchors:['1', '2', '3', '4', '5', '6', '7', '8'],
         	onLeave: function(index, nextIndex, direction) {
+                $('h1, h2, h3, h4, h5, h6, hr, .graphic, .nextbutton, .end-icon, .card').css({'visibility': 'hidden'});
+                $('h1, h2, h3, h4, h5, h6, hr, .graphic, .nextbutton, .end-icon, .card').removeClass('animated fadeInUp');
+                $('p, .story-overlay').css({'visibility': 'hidden'});
+                //Keep content on page almost
+                //this.find('h4').css({'visibility': 'visibile'});
+                $('p, .story-overlay').removeClass('animated fadeIn');
+                $('.play').removeClass('pause');
         	},
         	afterLoad: function(anchorLink, index) {
                 currentIndex = index;
             	setSideBar('dot', false);
+                $('h1, h2, h3, h4, h5, h6, hr, .graphic, .nextbutton, .end-icon, .card').css({'visibility': 'visible'});
+                $('h1, h2, h3, h4, h5, h6, hr, .graphic, .nextbutton, .end-icon, .card').addClass('animated fadeInUp');
+                $('p, .story-overlay').css({'visibility': 'visible'});
+                $('p, .story-overlay').addClass('animated fadeIn');
         	},
         });
     }
@@ -114,7 +155,7 @@ $(document).ready(function() {
 
 function fadeOutLink(elementLink, destination) {
     $('body').on('click', elementLink,function() {
-        $('body').fadeOut(500, function() {
+        $('body').fadeOut(600, function() {
             window.location.href = destination;
         });
     });
@@ -149,9 +190,10 @@ function setSideBar(choice, animate) {
         var fullTemplate = `
             <div class='side-dot'>
                 <img class='selected' src='../menu/subsection-icon-selected.png'>
-                <img class='sub-icon' src='../menu/subsection-icon.png'></div>`;
+                <a href="#1"><img class='sub-icon' src='../menu/subsection-icon.png'></a>
+            </div>`;
         for (var i = 0; i < $('.section').length - 1; i++) {
-            fullTemplate += "<div class='side-dot'><img class='sub-icon' src='../menu/subsection-icon.png'></div>";
+            fullTemplate += "<div class='side-dot'><a href='#" + (i + 2) + "'><img class='sub-icon' src='../menu/subsection-icon.png'></a></div>";
         }
 
         if (animate) {
