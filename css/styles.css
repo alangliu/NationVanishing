@@ -616,6 +616,7 @@ video {
 	font-weight: 700;
 	padding-bottom: 25px;
 	opacity: 0.5;
+    cursor: pointer;
 }
 
 #temp-box {
