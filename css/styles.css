@@ -571,25 +571,25 @@ video {
 	background-image: url("../introduction/why.png");
 }
 
-	#why-graphic {
-		position: relative;
-		float: right;
-		width: 500px;
-		height: 500px;
-	}
+#why-graphic {
+	position: relative;
+	float: right;
+	width: 500px;
+	height: 500px;
+}
 
-	#above-graphic {
-		background-image: url("../introduction/above-selected.png");
-		width: 500px;
-		height: 250px;
+#above-graphic {
+	background-image: url("../introduction/above-faded.png");
+	width: 500px;
+	height: 250px;
 
-	}
+}
 
-	#below-graphic {
-		background-image: url("../introduction/below-selected.png");
-		width: 500px;
-		height: 250px;
-	}
+#below-graphic {
+	background-image: url("../introduction/below-faded.png");
+	width: 500px;
+	height: 250px;
+}
 
 #two-degrees {
 	background-color: #3C6C8B;
