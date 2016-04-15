@@ -14,6 +14,22 @@ $('.section').css( {
 
 
 $(document).ready(function() {
+    $('#above-graphic').click(function() {
+        setIcebergCard();
+        $(this).css("background-image", "url(../introduction/above-selected.png)");
+        $('#below-graphic').css("background-image", "url(../introduction/below-faded.png)");
+        $('#iceberg-title').text('Above');
+        $('#iceberg-text').text('Mountain glaciers and polar ice caps are melting. The runoff water is added to the world’s ocean supply.');
+    });
+
+    $('#below-graphic').click(function() {
+        setIcebergCard();
+        $(this).css("background-image", "url(../introduction/below-selected.png)");
+        $('#above-graphic').css("background-image", "url(../introduction/above-faded.png)");
+        $('#iceberg-title').text('Below');
+        $('#iceberg-text').text('Warmer ocean temperatures expand water molecules in a process called thermal expansion. The expanded water has nowhere to go but up!');
+    });
+
     $('#play1').click(function() {
         if (isPlay) {
             document.getElementById('audio1').pause();
@@ -55,7 +71,7 @@ $(document).ready(function() {
     if ($('meta#dots-diamonds').length > 0) {
         $('#fullpage').fullpage( {
             anchors:['1', '2', '3', '4', '5', '6', '7', '8'],
-        	onLeave: function(index, nextIndex, direction) {
+            onLeave: function(index, nextIndex, direction) {
                 $('h1, h2, h3, h4, h5, h6, hr, .graphic, .nextbutton, .end-icon, .card').css({'visibility': 'hidden'});
                 $('h1, h2, h3, h4, h5, h6, hr, .graphic, .nextbutton, .end-icon, .card').removeClass('animated fadeInUp');
                 $('p, .story-overlay').css({'visibility': 'hidden'});
@@ -63,15 +79,15 @@ $(document).ready(function() {
                 //this.find('h4').css({'visibility': 'visibile'});
                 $('p, .story-overlay').removeClass('animated fadeIn');
                 $('.play').removeClass('pause');
-        	},
-        	afterLoad: function(anchorLink, index) {
+            },
+            afterLoad: function(anchorLink, index) {
                 currentIndex = index;
-            	setSideBar('dot', false);
+                setSideBar('dot', false);
                 $('h1, h2, h3, h4, h5, h6, hr, .graphic, .nextbutton, .end-icon, .card').css({'visibility': 'visible'});
                 $('h1, h2, h3, h4, h5, h6, hr, .graphic, .nextbutton, .end-icon, .card').addClass('animated fadeInUp');
                 $('p, .story-overlay').css({'visibility': 'visible'});
                 $('p, .story-overlay').addClass('animated fadeIn');
-        	},
+            },
         });
     }
 
@@ -109,7 +125,7 @@ $(document).ready(function() {
                 opacity: 0
             });
             $('.close-icon').show();
-            
+
             $('.close-icon').animate({
                 opacity: 1
             }, 250);
@@ -172,16 +188,16 @@ function setSideBar(choice, animate) {
                     this.src = this.src.replace('before', 'after');
 
                     var index = parseInt(this.id);
-                    $($('.strip')[index]).find('.filter').hide();            
+                    $($('.strip')[index]).find('.filter').hide();
                 })
                 .mouseleave(function() {
                     this.src = this.src.replace('after', 'before');
-                    
+
                     var index = parseInt(this.id);
                     $($('.strip')[index]).find('.filter').show();
                 });
         }).animate({
-            opacity: 1    
+            opacity: 1
         }, 250);
 
         $.fn.fullpage.setMouseWheelScrolling(false);
@@ -219,16 +235,22 @@ function setSideBar(choice, animate) {
 }
 
 $( window ).resize(function() {
-	var h = $(window).height();
+    var h = $(window).height();
 
- 	$('.bar').css({
+    $('.bar').css({
         height: h,
- 	});
+    });
     var pageWidth = $('#fullpage').width();
     $('#menuwrapper').css({
         width: pageWidth - 95
     });
 });
+
+function setIcebergCard() {
+    if ($('.why-default').length > 0) {
+        $('.why-default').replaceWith(icebergTermplate);
+    }
+}
 
 var overlay = `
     <div id="menuwrapper">
@@ -293,7 +315,15 @@ var diamondTemplate = `
     <a href="../future/future.html"><img class="icon diamond" id="4" src='../menu/future-icon-before.png'></a>
 `;
 
-
+var icebergTermplate = `
+    <div class="card-container">
+        <div class="card-content">
+            <h4 id="iceberg-title"></h4>
+            <hr>
+            <p id="iceberg-text"></p>
+        </div>
+    </div>
+`
 
 
 
