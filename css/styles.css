@@ -72,7 +72,7 @@ h4 {
 	color: white;
 }
 
-.card-container h4{
+.card-container h4, #cop21-content h4{
 	margin: 0 auto;
 	text-align: center;
 	color: black;
@@ -690,6 +690,35 @@ video {
 
 #cop21 {
 	background-image: url("../government/cop21.png");
+}
+
+#cop21-wrapper {
+	overflow: hidden;
+	padding-left: 16%;
+}
+
+#cop21-card {
+	background-image: url("../government/cop21-card.png");
+	margin: 0 auto;
+	width: 800px;
+	height: 350px;
+	float: left;
+}
+
+#cop21-content {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	padding-left: 280px;
+	padding-right: 70px;
+}
+
+#cop21-links {
+	float: left;
+}
+
+#cop21-links p{
+	color: white;
 }
 
 #government-end {
