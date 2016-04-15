@@ -12,13 +12,29 @@ $('.section').css( {
  var currentIndex = 1;
  var isPlay = false;
 
+var thermNums = ['+ .12', '+ .11', '+ .10', '+ .09', '+ .08'];
+
 $(document).ready(function() {
     var origThermTop =  parseInt($('#yellow-bar').css('top'), 10);
     $('#temp-numbers p').click(function() {
-        var yPos =  getOffset(this).top
-        $('#yellow-bar').css({
+        var index = $(this).index();
+
+        var yPos =  getOffset(this).top + 15;
+        var thermHeight = origThermTop - yPos;
+        if (this == $('#temp-numbers p')[$('#temp-numbers p').length - 1]) {
+            thermHeight = 0;
+            yPos = origThermTop;
+        }
+
+        $('#yellow-bar').animate({
             top: yPos,
-            height: origThermTop - yPos
+            height: thermHeight
+        }, 1000);
+
+        $('#temp-box').animate({
+            top: yPos - 27,
+        }, 1000, function() {
+            $('#temp-box p').text(thermNums[index]);
         });
     });
 
