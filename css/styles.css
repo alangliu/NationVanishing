@@ -596,12 +596,12 @@ video {
 }
 
 #yellow-bar {
-	position: relative;
+	position: fixed;
 	background-color: #EBB238;
 	width: 8.5px;
 	height: 0px;
 	left: 166px;
-	top: 345px;
+	top: 330px;
 }
 
 #temp-numbers {
@@ -627,6 +627,13 @@ video {
 	background-color: #0D3A56;
 }
 
+#temp-image {
+	background-image: url("../introduction/temperature.png");
+	height: 500px;
+	width: 500px;
+	background-repeat: no-repeat;
+}
+
 #intro-end {
 	background-image: url("../introduction/introend.png");
 }
@@ -643,6 +650,12 @@ video {
 
 #map {
 	background-image: url("../lands/map.png");
+}
+
+.map-spot {
+	background-image: url("../lands/map-spot.png");
+	width: 80px;
+	height: 80px;
 }
 
 #king-tides {
