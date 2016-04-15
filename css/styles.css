@@ -595,6 +595,38 @@ video {
 	background-color: #3C6C8B;
 }
 
+#yellow-bar {
+	position: relative;
+	background-color: #EBB238;
+	width: 8.5px;
+	height: 20px;
+	left: 166px;
+	top: 325px;
+}
+
+#temp-numbers {
+	position: fixed;
+	top: 110px;
+	left: 220px;
+}
+
+#temp-numbers p {
+	font-family: "Source Sans Pro", sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	padding-bottom: 25px;
+	opacity: 0.5;
+}
+
+#temp-box {
+	position: fixed;
+	top: 305px;
+	left: 290px;
+	width: 50px;
+	padding: 10px;
+	background-color: #0D3A56;
+}
+
 #intro-end {
 	background-image: url("../introduction/introend.png");
 }
