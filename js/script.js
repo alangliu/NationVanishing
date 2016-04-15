@@ -14,7 +14,36 @@ $('.section').css( {
 
 var thermNums = ['+ .12', '+ .11', '+ .10', '+ .09', '+ .08'];
 
+var cop21Content = [
+    {
+        title: 'Climate Change',
+        text: 'The 2015 United Nations Climate Change Conference, or COP 21,was held in Paris, France, from November 30th to December 12th.The conference was attended by over 190 countries and set alandmark goal of limiting global temperature increase to 1.5degrees Celsius.',
+    },
+    {
+        title: 'Cop21',
+        text: 'I think it\'s a conference',
+    },
+    {
+        title: 'Cop22',
+        text: 'Probably the following conference',
+    },
+    {
+        title: 'Cop23',
+        text: 'The Final Conference',
+    },
+]
+
 $(document).ready(function() {
+    $('#cop21-links p').click(function() {
+        var index = $(this).index();
+
+        $('#cop21-content h4').text(cop21Content[index].title);
+        $('#cop21-content p').text(cop21Content[index].text);
+
+        $('.cop21-active').removeClass('cop21-active');
+        $(this).addClass('cop21-active');
+    });
+
     var origThermTop =  parseInt($('#yellow-bar').css('top'), 10);
     $('#temp-numbers p').click(function() {
         var index = $(this).index();
