@@ -72,7 +72,7 @@ $(document).ready(function() {
         $(this).css("background-image", "url(../introduction/above-selected.png)");
         $('#below-graphic').css("background-image", "url(../introduction/below-faded.png)");
         $('#iceberg-title').text('Above');
-        $('#iceberg-text').text('Mountain glaciers and polar ice caps are melting. The runoff water is added to the world’s ocean supply.');
+        $('#iceberg-text').text("Mountain glaciers and polar ice caps are melting. The runoff water is added to the world's ocean supply.");
     });
 
     $('#below-graphic').click(function() {
@@ -102,6 +102,30 @@ $(document).ready(function() {
             isPlay = false;
         } else {
             document.getElementById('audio2').play();
+            $(this).addClass('pause');
+            isPlay = true;
+        }
+    });
+
+    $('#play3').click(function() {
+        if (isPlay) {
+            document.getElementById('audio3').pause();
+            $(this).removeClass('pause');
+            isPlay = false;
+        } else {
+            document.getElementById('audio3').play();
+            $(this).addClass('pause');
+            isPlay = true;
+        }
+    });
+
+    $('#play4').click(function() {
+        if (isPlay) {
+            document.getElementById('audio4').pause();
+            $(this).removeClass('pause');
+            isPlay = false;
+        } else {
+            document.getElementById('audio4').play();
             $(this).addClass('pause');
             isPlay = true;
         }

@@ -24,7 +24,6 @@
   bottom:0;
   width:4px;
   margin-left:-2px;
-
   background: white;
   cursor: ew-resize;
 }
@@ -34,7 +33,7 @@
     top: 50%;
     width: 64px;
     height: 64px;
-    margin: -32px 0 0 -32px;
+    margin: -32px 0 0 -30px;
 
     content: url(../lands/sliderbutton.png);
     color:#e76e66;

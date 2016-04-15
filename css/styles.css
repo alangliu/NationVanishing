@@ -67,9 +67,14 @@ h4 {
 }
 
 .card h4 {
-	margin: 0 auto;
+	margin: 50px auto -50px auto;
+	padding: 0;
 	text-align: center;
 	color: white;
+}
+
+#cop21 h4 {
+	margin-bottom: 50px;
 }
 
 .card-container h4, #cop21-content h4{
@@ -163,6 +168,18 @@ p {
 	padding-top: 15px;
 }
 
+.ba-description {
+	position: absolute;
+	z-index: 100;
+	left: 15%;
+	top: 76%;
+}
+
+.ba-description p {
+	font-size: 16px;
+	line-height: 24px;
+}
+
 span {
 	font-family: "Vollkorn", serif;
 	text-transform: lowercase;
@@ -181,6 +198,7 @@ hr {
 	background-color: white;
 	height: 5px;
 	width: 70px;
+	border: none;
 	-webkit-animation-delay: .3s;
   	-moz-animation-delay: .3s;
 }
@@ -190,6 +208,7 @@ hr {
 	height: 5px;
 	margin: 0 auto;
 	width: 50px;
+	border: none;
 }
 
 /* HOME */
@@ -482,21 +501,17 @@ video {
 	left: 50%;
 }
 
-.why-content {
-	overflow: hidden;
-	padding: 0 15% 0 15%;
-}
-
 .card-container {
 	position: absolute;
 	margin: 0 auto;
-	margin-top: -125px;
+	margin-top: -120px;
 	top: 50%;
-	width: 450px;
-	height: 250px;
+	width: 400px;
+	height: 230px;
 	background-color: white;
 	box-shadow: 0px 0px 10px #3C3C3C;
 	float: left;
+	margin-left: 50px;
 }
 
 .card-content {
@@ -571,6 +586,29 @@ video {
 	background-image: url("../introduction/why.png");
 }
 
+.why-default {
+	position: absolute;
+	top: 50%;
+	font-style: italic;
+	font-size: 18px;
+	width: 230px;
+	margin-left: 170px;
+	background-color: rgba(0, 0, 0, 0.35);
+	border-radius: 5px;
+	padding: 20px;
+	transform: translateY(-50%);
+}
+
+.why-default p {
+	padding: 0;
+	color: white;
+}
+
+.why-content {
+	overflow: hidden;
+	padding: 0 15% 0 15%;
+}
+
 #why-graphic {
 	position: relative;
 	float: right;
@@ -582,13 +620,16 @@ video {
 	background-image: url("../introduction/above-faded.png");
 	width: 500px;
 	height: 250px;
-
 }
 
 #below-graphic {
 	background-image: url("../introduction/below-faded.png");
 	width: 500px;
 	height: 250px;
+}
+
+#above-graphic:hover, #below-graphic:hover {
+	cursor: pointer;
 }
 
 #two-degrees {
@@ -695,22 +736,21 @@ video {
 
 #cop21-wrapper {
 	overflow: hidden;
-	padding-left: 16%;
+	padding-bottom: 5%;
 }
 
 #cop21-card {
 	background-image: url("../government/cop21-card.png");
 	margin: 0 auto;
-	width: 800px;
+	width: 720px;
 	height: 350px;
-	float: left;
 }
 
 #cop21-content {
 	position: relative;
 	top: 50%;
 	transform: translateY(-50%);
-	padding-left: 280px;
+	padding-left: 200px;
 	padding-right: 70px;
 }
 
@@ -745,6 +785,10 @@ video {
 	background-image: url("../people/story-identity.png");
 }
 
+#graves {
+	background-image: url("../people/story-graves.png");
+}
+
 #people-end {
 	background-image: url("../people/peopleend.png");
 }
@@ -753,6 +797,10 @@ video {
 
 #future {
 	background-image: url("../future/futureimage.png")
+}
+
+#global-issue {
+	background-color: #18243D;
 }
 
 #future-quote {
