@@ -35,6 +35,14 @@ h1 {
 	font-size: 42px;
 }
 
+#take-action h1 {
+	padding: 0;
+	font-size: 38px;
+	padding-bottom: 30px;
+	line-height: 54px;
+	letter-spacing: 4.2px;
+}
+
 h2 {
 	margin: 0;
 	font-family: "NexaBold", sans-serif;
@@ -54,6 +62,10 @@ h3 {
 	line-height: 32px;
 	width: 420px;
 	color: white;
+}
+
+#take-action h3 {
+	width: 450px;
 }
 
 h4 {
@@ -238,7 +250,7 @@ video {
 
 #title {
 	position: absolute;
-	top: 20%;
+	top: 25%;
 	left: 25%;
 	z-index: 100;
 }
@@ -255,7 +267,7 @@ video {
 	letter-spacing: 1.8px;
 	text-align: center;
 	padding: 10px 0 10px 0;
-	top: 75%;
+	top: 65%;
 	left: 0;
 	right: 0;
 	transition: opacity .25s ease-in-out;
@@ -298,6 +310,22 @@ video {
     -moz-transition: background-image .25s ease-in-out;
     -webkit-transition: background-image .25s ease-in-out;
 }
+
+.send-message-button {
+	position: absolute;
+	background-image: url("../menu/send-message-button.png");
+	width: 65px;
+	height: 50px;
+	left: 50%;
+	top: 0;
+	margin-left: -32px;
+	margin-top: 600px;
+}
+
+.send-message-button:hover {
+	cursor: pointer;
+}
+
 
 .menu-icon {
 	background-image: url("../menu/menu-icon.png");
@@ -796,7 +824,7 @@ video {
 /* Future */
 
 #future {
-	background-image: url("../future/futureimage.png")
+	background-image: url("../future/futureimage.png");
 }
 
 #global-issue {
@@ -804,7 +832,21 @@ video {
 }
 
 #future-quote {
-	background-image: url("../future/futurequote.png")
+	background-image: url("../future/futurequote.png");
+}
+
+#take-action {
+	background-image: url("../future/take-action.png");
+}
+
+#message {
+	position: absolute;
+	background-image: url("../future/messageimage.png");
+	width: 420px;
+	height: 100%;
+	top: 0;
+	right: 0;
+	margin-right: 95px;
 }
 
 
