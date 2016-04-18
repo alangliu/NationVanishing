@@ -1,8 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Vollkorn:400,400italic,700,700italic);
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700,900);
 @import url(https://fonts.googleapis.com/css?family=Coustard);
-@font-face { font-family: NexaBold; src: url('nexabold.oft'); } 
-@font-face { font-family: NexaLight; src: url('nexalight.oft'); } 
+@font-face { font-family: NexaBold; src: url('NexaBold.oft'); } 
 
 html, body {
 	margin:0; 
