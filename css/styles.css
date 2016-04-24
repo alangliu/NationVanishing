@@ -741,7 +741,11 @@ video {
 }
 
 #map {
-	background-image: url("../lands/map.png");
+	background-color: #000;
+}
+
+.map-img {
+	vertical-align: middle;
 }
 
 .map-spot {

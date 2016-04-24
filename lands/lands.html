@@ -34,7 +34,12 @@
 		</div>
 		<div id="map" class="section">
 			<div class="logo"><img src="../logo.png" width="150px"></div>
-			<div id="spot1" class="map-spot">
+            <img class="map-img" src="map-real.png" width="1440" height="720" usemap="#map-circles"></img>
+            <map name="map-circles">
+                <area shape="circle" class="marshall" coords="601,201,30" />
+                <area shape="circle" class="tuvalu" coords="747,375,31" />
+                <area shape="circle" class="kiribati" coords="1052,286,32" />
+            </map>
 			</div>
 		</div>
 		<div id="lands-quote" class="section">
@@ -80,6 +85,15 @@
 </body>
 	<script type="text/javascript" src="../js/jquery-2.2.2.min.js"></script>
 	<script type="text/javascript" src="../js/jquery.fullPage.js"></script>
+    <script type="text/javascript" src="../js/rwdImageMaps.js"></script>
 	<script type="text/javascript" src="../js/script.js"></script>
 	<script type="text/javascript" src="../js/slider.js"></script>
+    <script>
+        $('img[usemap]').rwdImageMaps();
+        $('.map-img').css( {
+            width: '100%',
+            height: 'auto',
+        });
+
+    </script>
 <html>

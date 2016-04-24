@@ -3,11 +3,11 @@ var winHeight = $(window).height();
 $('.section').css( {
     height: winHeight,
     width: '100%'
- });
+});
 
- $('.bar').css( {
+$('.bar').css( {
     height: winHeight,
- });
+});
 
  var currentIndex = 1;
  var isPlay = false;
@@ -34,6 +34,18 @@ var cop21Content = [
 ]
 
 $(document).ready(function() {
+    $('.tuvalu').click(function() {
+        console.log('tuvalu');
+    });
+
+    $('.marshall').click(function() {
+        console.log('marshall');
+    });
+
+    $('.kiribati').click(function() {
+        console.log('kiribati');
+    });
+
     $('#cop21-links p').click(function() {
         var index = $(this).index();
 
