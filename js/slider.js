@@ -17,6 +17,7 @@ $(window).resize(function(){
   $('.ba-slider').each(function(){
     var cur = $(this);
     var width = cur.width()+'px';
+
     cur.find('.resize img').css('width', width);
   });
 });

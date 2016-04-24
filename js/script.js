@@ -134,6 +134,8 @@ $(document).ready(function() {
     //Fade In and Out
     $('body').fadeIn(600).removeClass('hidden');
 
+    fadeOutLink('.logo', '../index.html');
+
     fadeOutLink('#intro-strip', '../introduction/introduction.html');
     fadeOutLink('#lands-strip', '../lands/lands.html');
     fadeOutLink('#government-strip', '../government/government.html');
@@ -148,12 +150,11 @@ $(document).ready(function() {
     if (document.location.pathname.match(/future.html/) == null) {
         fadeOutLink('.send-message-button', '../future/future.html#4');
     } else {
-        $('body').on('click', $('.send-message-button'),function() {
+        $('body').on('click', '.send-message-button',function() {
             window.location.href = '../future/future.html#4';
         });
     }
-
-
+    
 
     if ($('meta#dots-diamonds').length > 0) {
         $('#fullpage').fullpage( {
@@ -161,10 +162,10 @@ $(document).ready(function() {
             onLeave: function(index, nextIndex, direction) {
                 $('h1, h2, h3, h4, h5, h6, hr, .graphic, .nextbutton, .end-icon, .card').css({'visibility': 'hidden'});
                 $('h1, h2, h3, h4, h5, h6, hr, .graphic, .nextbutton, .end-icon, .card').removeClass('animated fadeInUp');
-                $('p, .story-overlay, #message').css({'visibility': 'hidden'});
+                $('p, .story-overlay, #message, .logo').css({'visibility': 'hidden'});
                 //Keep content on page almost
                 //this.find('h4').css({'visibility': 'visibile'});
-                $('p, .story-overlay, #message').removeClass('animated fadeIn');
+                $('p, .story-overlay, #message, .logo').removeClass('animated fadeIn');
                 $('.play').removeClass('pause');
             },
             afterLoad: function(anchorLink, index) {
@@ -172,8 +173,8 @@ $(document).ready(function() {
                 setSideBar('dot', false);
                 $('h1, h2, h3, h4, h5, h6, hr, .graphic, .nextbutton, .end-icon, .card').css({'visibility': 'visible'});
                 $('h1, h2, h3, h4, h5, h6, hr, .graphic, .nextbutton, .end-icon, .card').addClass('animated fadeInUp');
-                $('p, .story-overlay, #message').css({'visibility': 'visible'});
-                $('p, .story-overlay, #message').addClass('animated fadeIn');
+                $('p, .story-overlay, #message, .logo').css({'visibility': 'visible'});
+                $('p, .story-overlay, #message, .logo').addClass('animated fadeIn');
             },
         });
     }

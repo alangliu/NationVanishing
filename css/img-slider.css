@@ -1,6 +1,7 @@
 .ba-slider {
     position: relative;
     overflow: hidden;
+    height: 100%;
 }
 
 .ba-slider img {
