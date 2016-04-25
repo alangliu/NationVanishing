@@ -35,15 +35,28 @@ var cop21Content = [
 
 $(document).ready(function() {
     $('.tuvalu').click(function() {
-        console.log('tuvalu');
+        $('.map-popup').show();
+        $('.popup-img').html("<img src='tuvalu-info.png'>");
     });
 
     $('.marshall').click(function() {
-        console.log('marshall');
+        $('.map-popup').show();
+        $('.popup-img').html("<img src='marshallislands-info.png'>");
     });
 
     $('.kiribati').click(function() {
-        console.log('kiribati');
+        $('.map-popup').show();
+        $('.popup-img').html("<img src='kiribati-info.png'>");
+    });
+
+    $(document).keyup(function(e) {
+        if (e.keyCode === 27){
+            $('.map-popup').hide();
+        }
+    });
+
+    $('.close-popup').click(function() {
+        $('.map-popup').hide();
     });
 
     $('#cop21-links p').click(function() {

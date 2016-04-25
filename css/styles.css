@@ -754,6 +754,12 @@ video {
 	height: 80px;
 }
 
+.map-popup {
+    position: absolute;
+    left: 25%;
+    top: 25%;
+}
+
 #king-tides {
 	background-color: #18243B;
 }
