@@ -63,10 +63,6 @@ h3 {
 	color: white;
 }
 
-#take-action h3 {
-	width: 450px;
-}
-
 h4 {
 	margin: 0;
 	margin-bottom: 20px;
@@ -84,6 +80,13 @@ h4 {
 	color: white;
 	line-height: 31px
 }
+
+#message h4 {
+	font-family:"Source Sans Pro", sans-serif;
+	font-size: 24px;
+}
+
+
 
 #cop21 h4 {
 	margin-bottom: 50px;
@@ -157,6 +160,14 @@ h6 {
 	color: #00FBE2;
 	font-size: 34px;
 	letter-spacing: 2px;
+}
+
+#message h6 {
+	text-align: center;
+	font-size: 18px;
+	letter-spacing: 1.25px;
+	padding-top: 25px;
+	padding-bottom: 15px;
 }
 
 p {
@@ -299,6 +310,13 @@ video {
 	margin-top: 110px;
 }
 
+#take-action .nextbutton {
+	background-color: #18243C;
+	color: white;
+	top: auto;
+	margin-top: 25px;
+}
+
 .nextbutton:hover {
 	cursor: pointer;
 	opacity: 0.7;
@@ -418,7 +436,7 @@ video {
 	top: 0;
 	left: 0;
 	height: 100%;
-	z-index: 10;
+	z-index: 200;
 }
 
 .strip {
@@ -683,7 +701,7 @@ video {
 }
 
 #two-degrees {
-	background-color: #3C6C8B;
+	background-image: url("../introduction/2degrees.png");
 }
 
 #yellow-bar {
@@ -741,7 +759,7 @@ video {
 }
 
 #map {
-	background-color: #000;
+	background-color: #A4D9E1;
 }
 
 .map-img {
@@ -783,7 +801,7 @@ video {
 }
 
 #climate-migration {
-	background-color: #246AA5;
+	background-color: #3C6C8B;
 }
 
 #government-quote {
@@ -881,10 +899,58 @@ video {
 	margin-right: 95px;
 }
 
+.email-form {
+	margin-top: 70px;
+}
 
+.email-form input {
+	margin-bottom: 7px;
+	opacity: 0.2;
+	width: 275px;
+	height: 25px;
+	color: white;
+	opacity: 1;
+	background-color: rgba(255, 255, 255, 0.2);
+	border: none;
+	padding-top: 0;
+	padding-left: 0;
+}
 
+input[type="email"] {
+	font-family: "Source Sans Pro", sans-serif;
+	font-weight: 500;
+	font-size: 15px;
+	padding-left: 10px;
+}
 
+input#formbody {
+	padding-bottom: 150px;
+}
 
+.sign-form {
+	margin: 0;
+}
+
+.sign-form input {
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px solid white;
+	width: 275px;
+	color: white;
+	margin-bottom: 0px;
+	font-size: 18px;
+	font-family: "Source Sans Pro", sans-serif;
+}
+
+input:focus {
+	outline: 0;
+}
+
+.sign-text {
+	font-size: 12px;
+	text-align: left;
+	margin-left: 71px;
+}
 
 
 

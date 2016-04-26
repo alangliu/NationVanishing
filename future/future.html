@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Government</title>
+	<title>Future</title>
 	<link rel="stylesheet" type="text/css" href="../css/jquery.fullPage.css">
 	<link rel="stylesheet" type="text/css" href="../css/styles.css">
 	<link rel="stylesheet" href="../css/animate.css">
@@ -49,10 +49,18 @@
 			</div>
 			<div id="message">
 				<h4>Send a message<br>to your government</h4>
-				<form>
-					<input type="text" name="To" value="To: "><br>
-					<input type="text" name="Subject" value="Subject: "><br>
-					<input type="text" name="Body">
+				<form class="email-form">
+					<input type="email" name="To" value="To:&nbsp"><br>
+					<input type="email" name="Subject" value="Subject:&nbsp"><br>
+					<input type="email" name="Body" id="formbody"><br>
+				</form>
+				<h6>Sign your Message</h6>
+				<form class="sign-form">
+					<input type="sign" name="First"><br><p class="sign-text">First Name</p>
+					<input type="sign" name="Last"><br><p class="sign-text">Last Name</p>
+					<input type="sign" name="Email"><br><p class="sign-text">Email</p>
+				</form>
+				<div class="nextbutton">Send Email</div>
 			</div>
 		</div>
 	</div>
