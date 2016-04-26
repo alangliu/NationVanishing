@@ -732,9 +732,10 @@ video {
 	position: fixed;
 	top: 305px;
 	left: 290px;
-	width: 50px;
+	width: 125px;
 	padding: 10px;
 	background-color: #0D3A56;
+	border-radius: 5px;
 }
 
 #temp-image {
@@ -773,9 +774,23 @@ video {
 }
 
 .map-popup {
-    position: absolute;
-    left: 25%;
-    top: 25%;
+ 	position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding-right: 95px;
+}
+
+.close-popup {
+	position: absolute;
+	display: none;
+	right: 0;
+	top: 30px;
+	padding-right: 95px;
+}
+
+.close-popup:hover {
+	cursor: pointer;
 }
 
 #king-tides {
@@ -815,9 +830,11 @@ video {
 #cop21-wrapper {
 	overflow: hidden;
 	padding-bottom: 5%;
+	padding-left: 5%;
 }
 
 #cop21-card {
+	display: inline-block;
 	background-image: url("../government/cop21-card.png");
 	margin: 0 auto;
 	width: 720px;
@@ -833,12 +850,24 @@ video {
 }
 
 #cop21-links {
-	float: left;
+	display: inline-block;
 }
 
 #cop21-links p{
+	padding-top: 10px;
+	font-weight: 600;
+	font-size: 17px;
 	color: white;
 }
+
+#cop21-links:hover{
+	cursor: pointer;
+}
+
+.cop21-active {
+	color: #00F0E7 !important;
+}
+
 
 #government-end {
 	background-image: url("../government/governmentend.png");

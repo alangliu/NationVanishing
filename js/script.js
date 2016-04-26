@@ -12,51 +12,58 @@ $('.bar').css( {
  var currentIndex = 1;
  var isPlay = false;
 
-var thermNums = ['+ .12', '+ .11', '+ .10', '+ .09', '+ .08'];
+var thermNums = ['+ .27\xB0 since 1990', '+ .28\xB0 since 1990', '+ .18\xB0 since 1990', '+ .02\xB0 since 1990', '+ .00\xB0 since 1990'];
 
 var cop21Content = [
     {
-        title: 'Climate Change',
+        title: 'COP21',
+        text: 'The 2015 United Nations Climate Change Conference, or COP 21, was held in Paris, France, from November 30th to December 12th. The conference was attended by over 190 countries and set alandmark goal of limiting global temperature increase to 1.5\xB0 Celsius.',
+    },
+    {
+        title: 'What it accomplished',
         text: 'The 2015 United Nations Climate Change Conference, or COP 21,was held in Paris, France, from November 30th to December 12th.The conference was attended by over 190 countries and set alandmark goal of limiting global temperature increase to 1.5degrees Celsius.',
     },
     {
-        title: 'Cop21',
-        text: 'I think it\'s a conference',
+        title: 'What it didn\'t',
+        text: 'The 2015 United Nations Climate Change Conference, or COP 21,was held in Paris, France, from November 30th to December 12th.The conference was attended by over 190 countries and set alandmark goal of limiting global temperature increase to 1.5degrees Celsius.',
     },
     {
-        title: 'Cop22',
-        text: 'Probably the following conference',
-    },
-    {
-        title: 'Cop23',
-        text: 'The Final Conference',
+        title: 'What needs to be done',
+        text: 'The 2015 United Nations Climate Change Conference, or COP 21,was held in Paris, France, from November 30th to December 12th.The conference was attended by over 190 countries and set alandmark goal of limiting global temperature increase to 1.5degrees Celsius.',
     },
 ]
 
 $(document).ready(function() {
     $('.tuvalu').click(function() {
         $('.map-popup').show();
+        $('.close-popup').show();
+        //$('.map-popup').addClass('animated fadeInLeft');
         $('.popup-img').html("<img src='tuvalu-info.png'>");
     });
 
     $('.marshall').click(function() {
         $('.map-popup').show();
+        $('.close-popup').show();
         $('.popup-img').html("<img src='marshallislands-info.png'>");
     });
 
     $('.kiribati').click(function() {
         $('.map-popup').show();
+        $('.close-popup').show();
         $('.popup-img').html("<img src='kiribati-info.png'>");
     });
 
     $(document).keyup(function(e) {
         if (e.keyCode === 27){
             $('.map-popup').hide();
+            $('.close-popup').hide();
         }
     });
 
     $('.close-popup').click(function() {
+        //$('.map-popup').removeClass('animated fadeInUp');
         $('.map-popup').hide();
+        $('.close-popup').hide();
     });
 
     $('#cop21-links p').click(function() {
@@ -157,7 +164,7 @@ $(document).ready(function() {
     });
 
     //Fade In and Out
-    $('body').fadeIn(600).removeClass('hidden');
+    $('body').fadeIn(300).removeClass('hidden');
 
     fadeOutLink('.logo', '../index.html');
 

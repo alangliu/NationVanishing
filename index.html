@@ -4,8 +4,11 @@
 	<title>Nation Vanishing</title>
 	<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" href="css/fakeLoader.css">
+	<link rel='shortcut icon' href='favicon.png'>
 </head>
 <body class="hidden">
+	<div id="fakeLoader"></div>
 	<div id="fullscreen-bg" class="section">
 		<video loop autoplay id="bgvid">
 			<source src="waves.mp4">	
@@ -22,4 +25,13 @@
 	<script type="text/javascript" src="js/jquery-2.2.2.min.js"></script>
 	<script type="text/javascript" src="js/jquery.fullPage.js"></script>
 	<script type="text/javascript" src="js/firstpage.js"></script>
+	<script type="text/javascript" src="js/fakeLoader.min.js"></script>
+	<script type="text/javascript">
+		$("#fakeLoader").fakeLoader({
+			timeToHide:5000, //Time in milliseconds for fakeLoader disappear
+			zIndex:"999",//Default zIndex
+			bgColor:"black", //Hex, RGB or RGBA colors
+			imagePath:"loading.gif" //If you want can you insert your custom image
+		});
+	</script>
 <html>
