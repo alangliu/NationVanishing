@@ -21,15 +21,15 @@ var cop21Content = [
     },
     {
         title: 'What it accomplished',
-        text: 'The 2015 United Nations Climate Change Conference, or COP 21,was held in Paris, France, from November 30th to December 12th.The conference was attended by over 190 countries and set alandmark goal of limiting global temperature increase to 1.5degrees Celsius.',
+        text: 'The meeting was the establishment of a framework in which the majority of the world came together and reached agreements to cut back on carbon, and both developed and developing nations recognized a shared responsibility to act. Richer countries have also pledged to financially support poorer countries that are suffering the worst damage from climate change.',
     },
     {
         title: 'What it didn\'t',
-        text: 'The 2015 United Nations Climate Change Conference, or COP 21,was held in Paris, France, from November 30th to December 12th.The conference was attended by over 190 countries and set alandmark goal of limiting global temperature increase to 1.5degrees Celsius.',
+        text: 'Even assuming every country meets its pledges, if countries do not agree to greater cuts after those being made in Paris, the world will likely warm by 3.5 C or more. In terms of outcomes, there\'s an enormous gap between what was agreed to, and what was needed.',
     },
     {
         title: 'What needs to be done',
-        text: 'The 2015 United Nations Climate Change Conference, or COP 21,was held in Paris, France, from November 30th to December 12th.The conference was attended by over 190 countries and set alandmark goal of limiting global temperature increase to 1.5degrees Celsius.',
+        text: 'What happened at COP21 was the adoption of the Paris Agreement by the Conference of the Parties. Countries must now actually join before the Agreement is able to ensure that the critically important provisions and requirements of the Paris Agreement are fully put into motion. Contact your government today to encourage adoption!',
     },
 ]
 

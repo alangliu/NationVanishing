@@ -816,6 +816,7 @@ video {
 }
 
 #climate-migration {
+	/* background-image: url("../introduction/2degrees.png"); */
 	background-color: #3C6C8B;
 }
 
@@ -830,7 +831,7 @@ video {
 #cop21-wrapper {
 	overflow: hidden;
 	padding-bottom: 5%;
-	padding-left: 5%;
+	padding-right: 10%;
 }
 
 #cop21-card {
@@ -850,6 +851,7 @@ video {
 }
 
 #cop21-links {
+	position: absolute;
 	display: inline-block;
 }
 
